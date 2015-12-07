@@ -10,7 +10,7 @@ namespace huvabuvva
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("lalalalal");
+            Console.WriteLine("I A.M.");
         }
     }
 }
