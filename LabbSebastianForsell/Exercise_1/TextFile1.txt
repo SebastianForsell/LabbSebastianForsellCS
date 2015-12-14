@@ -1,0 +1,54 @@
+﻿Frågor 1
+1. CLR står för Common Language Runtime, den hanterar exekveringen av .NET program, hanteringen av minne, skräpinsamling etc.
+
+2. BCL står för Base Class Library, det är ett standard bibliotek för C# som innehåller då System klassen t.ex.
+
+3. Att kompilera kod innebär att kompilatorn översätter den koden man skrivit till en läsbar maskinkod.
+
+4. CIL står för Common Intermediate Language, det är ett objekt orienterat assembler kod som är helt stack baserad.
+	Den hanterar en del av översättningen till maskinkod., som då körs i en virtuell maskin.
+
+5. Den Kallas JIT, Just In Time, den sker normalt efter att koden blivit omvandlad till CIL-formatet som då översätter
+	den till maskinkod.
+
+6. Fördelar: Kan installera programmet oavsett hårdvaran på datorn.
+	Nackdelarna: lite grann söligare.
+
+Frågor 2
+1. En identifierare är namnet på en variabel(metoder, class) samt vilken typ den är, t.ex. int, string, double, som då kan anropas efter deklaration. 
+
+2. Identifieraren bör skrivas med camelCase och att namnet är relevant till sin användning. t.ex.  int antalDagar = 5; 
+
+3. Pascal Case är att alla nya ord börjar med en stor bokstav. 
+ camel Case är att alla nya ord efter det första har stor bokstav.
+
+4. Nyckelord är reserverade kommandon för språket så som System, Class, void, return etc.
+
+5. Det innebär att det gör skillnad om man skriver med en stor eller liten bokstav.
+
+6. Whitespace gör det så att man kan ha hur mycket mellanrum(mellanslag, tabb, ny rad) som helst, koden läser det bara som 1 mellanrum.
+	Detta gäller även om man fortsätter kodraden på en ny rad, det räknas som samma rad tills termineringen skrivs.
+
+7. Tecknet för terminering är ett semikolon (  ;  ).
+
+8. Uttryck grupperas med klammerparentes/måsvingar  (  {  }  ).
+
+9. Källkod bör kommenteras om inte funktionen av den delen av koden är inte riktigt klartydlig.
+	Man kan kommentera genom att göra // då man kommenterar bara 1 rad;
+	eller så kan man göra en kommentarblock genom att skriva innanför /*   */.
+	///  XML-kommentering, dokumentations kommentar. Exporterar XML data.
+
+Uppgift 2:
+            1.  ; förväntas   2. Programmet innehåller ingen statisk "Main" metod som en lämplig ingångspunkt
+			3. En Get eller Set öppnare förväntas. Typen eller namespace "klass" kunde inte hittas.
+			"<otilgiltig-global-kod>.Program": egenskap eller indexering måste ha åtminstone en åtkomst.
+			4.  } förväntas	 5. Namnet "Console" existerar inte i nuvarande sammanhang.
+
+Uppgift 3:
+			Rad 9: deklarerar namnet Bob som en sträng
+			Rad 11: Konsolen skriver ut namnet på personen samt använder formatet P (procent) till talet.
+			Rad 12: Använder formatet N (Number) för att visa talet i decimal form med komman för att separera var 3:e siffra;
+			precisionsnumret är hur många decimaler som ska visas.
+
+Uppgift 4: Efter att man tryckt på "Clean solution" så togs en del av debug filerna bort.
+"Clean Solution" i stort sett tar bort kompilerade filer i Bin / Obj även om koden inte har ändrats.

@@ -1,0 +1,16 @@
+﻿1. Att man skapar ett objekt från en mall.
+
+2. Det kan också kallas för Objekt
+
+3. värdetyper: int, double, bool, char
+	referenstyper: object, string
+
+4.	värdetyper: struct och enum
+	referenstyper: class, interface, delegate, array
+
+5. Stacken funkar på så vis att data kommer först in och sist ut, så man kan bara lägga till eller ta bort data från toppen av stacken.
+	Heap är en del av minnet där man lägger in vissa typer av data objekt. Datan kan läggas in och tas bort i vilken ordning som helst.
+
+6. En variabel är ett namn som representerar data som är inlagrad i minnet.
+	Att initiera en variabel innebär att man tilldelar variabeln ett värde.
+	Att tilldela en variabel med ett värde menas att variabeln får det värdet som man har angivit.
