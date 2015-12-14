@@ -45,6 +45,7 @@ namespace Uppgift_1
         {
             return this.colour;
         }
-        public override string ToString() => $"Mitt bord inne i huset är {GetWidth()}decimeter brett och {GetHeight()}decimeter högt, den har också {GetNumberOfLegs()} ben och har {GetColour()} färg.";
+        public override string ToString() =>
+            $"Mitt bord inne i huset är {GetWidth()}decimeter brett och {GetHeight()}decimeter högt, den har också {GetNumberOfLegs()} ben och har {GetColour()} färg.";
     }
 }

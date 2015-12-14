@@ -8,6 +8,7 @@ namespace Uppgift_1
 {
     class Circle
     {
+
         private double diameter;
         private Point centre;
         public void SetDiameter( double diameter)
@@ -20,7 +21,7 @@ namespace Uppgift_1
         }
         public double GetCircumference()
         {
-            return this.diameter * 3.1416;
+            return this.diameter * Math.PI;
         }
         public void SetCentre(Point p)
         {
