@@ -9,7 +9,11 @@ namespace Exercise4
     class Radio
     {
         private bool isOn;
-
+        private static int instanceCounter;
+        public static int InstanceCounter
+        {
+            get { return instanceCounter; }
+        }
         public bool IsOn
         {
             get { return isOn; }
@@ -22,7 +26,8 @@ namespace Exercise4
         public double Frequency
         {
             get { return frequency; }
-            set {
+            set
+            {
                 if (value >= 0 && value <= 100)
                 {
                     frequency = value;
@@ -37,7 +42,8 @@ namespace Exercise4
         public int Volume
         {
             get { return volume; }
-            set {
+            set
+            {
                 if (value >= 0 && value <= 50)
                 {
                     volume = value;
@@ -48,15 +54,19 @@ namespace Exercise4
                 }
             }
         }
+        static Radio()
+        {
+            instanceCounter = 0;
+        }
         public Radio()
         {
             IsOn = false;
             Volume = 15;
             Frequency = 93.50;
+            instanceCounter++;
         }
-        public Radio(int volume, double frequency)
+        public Radio(int volume, double frequency) : this()
         {
-            isOn = false;
             Volume = volume;
             Frequency = frequency;
         }
