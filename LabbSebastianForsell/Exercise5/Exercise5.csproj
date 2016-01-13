@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8F88BC2D-D9A4-4ECC-B6B6-C94DA254458A}</ProjectGuid>
+    <ProjectGuid>{326B6DDC-8051-4709-9D6D-A4B9C85CC3D5}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>wateagea</RootNamespace>
-    <AssemblyName>wateagea</AssemblyName>
+    <RootNamespace>Exercise5</RootNamespace>
+    <AssemblyName>Exercise5</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{29B78DEF-FADB-420F-B1AD-C7EEB708BC7A}</ProjectGuid>
+    <ProjectGuid>{ED4511F4-497A-42B9-9515-2BB0BDD6BA6B}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Exercise65</RootNamespace>
-    <AssemblyName>Exercise65</AssemblyName>
+    <RootNamespace>Exercise6</RootNamespace>
+    <AssemblyName>Exercise6</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

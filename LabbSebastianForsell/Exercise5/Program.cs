@@ -68,7 +68,8 @@ namespace Labb1
                             break;
                     }
                 }
-            } while (true);
+            }
+            while (loops);
         }
     }
 }
