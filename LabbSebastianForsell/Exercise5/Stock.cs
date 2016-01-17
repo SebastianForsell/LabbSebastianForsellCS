@@ -18,7 +18,7 @@ namespace Labb1
             }
             set
             {
-                if (index <= 500)
+                if (index <= 20)
                 {
                     stockItem[index] = value;
                 }
