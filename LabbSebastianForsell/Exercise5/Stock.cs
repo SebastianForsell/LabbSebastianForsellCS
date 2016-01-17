@@ -9,7 +9,7 @@ namespace Labb1
     class Stock
     {
         public static int stockCounter = 0;
-        public StockItem[] stockItem = new StockItem[500];
+        public StockItem[] stockItem = new StockItem[20];
         public StockItem this[int index]
         {
             get
@@ -18,9 +18,18 @@ namespace Labb1
             }
             set
             {
-                stockItem[index] = value;
+                if (index <= 500)
+                {
+                    stockItem[index] = value;
+                }
+                else
+                {
+                    Console.WriteLine("Lagret är fullt!");
+                    Console.ReadLine();
+                }
             }
         }
+        public int Length { get { return stockItem.Length; } }
         public void AddItem(StockItem item)
         {
             if (stockCounter < stockItem.Length)
@@ -31,13 +40,10 @@ namespace Labb1
         }
         public StockItem GetItem(int itemId)
         {
-            for (int i = 0; i < stockItem.Length; i++)
-            {
-                if (stockItem[i] != null && stockItem[i].Id == itemId)
+                if (stockItem[itemId] != null && stockItem[itemId].Id == itemId)
                 {
-                    return stockItem[i];
+                    return stockItem[itemId];
                 }
-            }
             return null;
         }
 

@@ -6,54 +6,37 @@ using System.Threading.Tasks;
 
 namespace Labb1
 {
-    enum StockMenu { Skapa_vara = 1, Inventera_vara, Lista_varor, Avsluta}
+    enum StockMenu { Skapa_vara = 1, Inventera_vara, Lista_varor, Avsluta }
     class Program
     {
         static void Main(string[] args)
         {
-            StockItem stockItem = new StockItem();
+            bool validInput;
+            int itemChoice;
             Stock stock = new Stock();
             bool loops = true;
             do
             {
                 Console.Clear();
-                byte counter = 1;
+                int counter = 1;
                 foreach (var item in Enum.GetNames(typeof(StockMenu)))
                 {
                     Console.WriteLine($"{counter++}: {item}");
                 }
-                byte inNumber;
-                if (byte.TryParse(Console.ReadLine(), out inNumber))
+                int inNumber;
+                if (int.TryParse(Console.ReadLine(), out inNumber))
                 {
                     StockMenu choice = (StockMenu)inNumber;
                     switch (choice)
                     {
                         case StockMenu.Skapa_vara:
-                            Console.Clear();
-                            Console.WriteLine("Vad ska varan ha för ID? ");
-                            stockItem.Id = int.Parse(Console.ReadLine());
-                            Console.WriteLine("Vad ska varan heta? ");
-                            stockItem.Name = Console.ReadLine();
-                            Console.WriteLine("Hur många varor av denna varan vill ni ha: ");
-                            stockItem.StockCountInt = int.Parse(Console.ReadLine());
-                            stock.AddItem(stockItem);
-
+                            CreateItemsInStock(stock);
                             break;
                         case StockMenu.Inventera_vara:
-                            Console.Clear();
-                            Console.WriteLine("Ange ID nummer för vara: ");
-                            StockItem stockCheck = stock.GetItem(int.Parse(Console.ReadLine()));
-                            Console.WriteLine($"Name: {stockItem.Name}, Antal: {stockItem.StockCountInt}");
-                            Console.WriteLine("Vad ska det nya antalet vara?: ");
-                            stockItem.StockCountInt = int.Parse(Console.ReadLine());
-                            Console.WriteLine($"Uppdaterade varan: Name: {stockItem.Name}, Antal: {stockItem.StockCountInt}");
-                            Console.ReadLine();
-                            
+                            CheckItems(out validInput, out itemChoice, stock);
                             break;
                         case StockMenu.Lista_varor:
-                            Console.Clear();
-                            
-                            Console.WriteLine("Alla varor: ");
+                            ListMyItems(stock);
                             break;
                         case StockMenu.Avsluta:
                             loops = false;
@@ -70,6 +53,61 @@ namespace Labb1
                 }
             }
             while (loops);
+        }
+        private static void CreateItemsInStock(Stock stock)
+        {
+            Console.Clear();         
+                //Console.WriteLine("Skapa vara och lägg till det i stock!");
+                Console.WriteLine("Skriv vilket ID det ska vara, namn, samt antalet i lager: ");
+                StockItem stockItem = new StockItem()
+                {
+                    Id = int.Parse(Console.ReadLine()),
+                    Name = Console.ReadLine(),
+                    StockCountInt = int.Parse(Console.ReadLine())
+                };
+                stock.AddItem(stockItem);
+
+        }
+        private static void CheckItems(out bool validInput, out int item, Stock stock)
+        {
+            Console.Clear();
+            Console.WriteLine("Inventera varor: ");
+            for (int i = 0; i < stock.Length; i++)
+            {
+                if (stock[i] != null)
+                {
+                    Console.WriteLine(i.ToString() + " " + stock[i]);
+                }
+            }
+            Console.WriteLine("Skriv ett nummer för att välja item: ");
+            validInput = int.TryParse(Console.ReadLine(), out item);
+            if (validInput)
+            {
+                Console.WriteLine("Skriv in ett nytt värde för lager: ");
+                stock[item].StockCountInt = int.Parse(Console.ReadLine());
+            }
+            else
+            {
+                Console.WriteLine("Måste skriva en siffra!");
+            }
+        }
+
+        private static void ListMyItems(Stock stock)
+        {
+            Console.Clear();
+            Console.WriteLine("Alla varor: ");
+            for (int i = 0; i < stock.Length; i++)
+            {
+                if (stock[i] is EcoStockItem && stock[i] != null)
+                {
+                    Console.WriteLine(stock[i] + " + ECO produkt! <3");
+                }
+                else if (stock[i] != null)
+                {
+                    Console.WriteLine(stock[i]);
+                }
+            }
+            Console.ReadLine();
         }
     }
 }

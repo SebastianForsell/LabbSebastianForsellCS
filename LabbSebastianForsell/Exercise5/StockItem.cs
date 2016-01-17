@@ -11,21 +11,16 @@ namespace Labb1
         private int id;
         private string name;
         private int stockCountInt;
-
         public int StockCountInt
         {
             get { return stockCountInt; }
             set { stockCountInt = value; }
         }
-
-
         public string Name
         {
             get { return name; }
             set { name = value; }
         }
-
-
         public int Id
         {
             get { return id; }
@@ -33,7 +28,7 @@ namespace Labb1
         }
         public override string ToString()
         {
-            return $"Stock Item";
+            return $"Stockcount: {stockCountInt}, Name: {Name}, ID: {Id} ";
         }
     }
 }
