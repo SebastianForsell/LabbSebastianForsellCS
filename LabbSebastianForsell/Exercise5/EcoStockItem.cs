@@ -17,7 +17,7 @@ namespace Labb1
         }
         public override string ToString()
         {
-            return $"Eco stock item";
+            return $"{base.ToString()} Märke: {marke}";
         }
     }
 }

@@ -56,8 +56,13 @@ namespace Labb1
         }
         private static void CreateItemsInStock(Stock stock)
         {
-            Console.Clear();         
-                //Console.WriteLine("Skapa vara och lägg till det i stock!");
+            Console.Clear();
+            Console.WriteLine("1 - Skapa allmän vara");
+            Console.WriteLine("2 - Skapa Juice");
+            int menuChoice = int.Parse(Console.ReadLine());
+
+            if (menuChoice == 1)
+            {
                 Console.WriteLine("Skriv vilket ID det ska vara, namn, samt antalet i lager: ");
                 StockItem stockItem = new StockItem()
                 {
@@ -66,6 +71,21 @@ namespace Labb1
                     StockCountInt = int.Parse(Console.ReadLine())
                 };
                 stock.AddItem(stockItem);
+            }
+            else if (menuChoice == 2)
+            {
+                Console.WriteLine("Skriv vilket ID det ska vara, namn, typ, märke, samt antalet i lager: ");
+                Juice juice = new Juice()
+                {
+                    Id = int.Parse(Console.ReadLine()),
+                    Name = Console.ReadLine(),
+                    Type = Console.ReadLine(),
+                    Marke = Console.ReadLine(),
+                    StockCountInt = int.Parse(Console.ReadLine())
+                };
+                stock.AddItem(juice);
+            }
+            
 
         }
         private static void CheckItems(out bool validInput, out int item, Stock stock)
@@ -100,7 +120,7 @@ namespace Labb1
             {
                 if (stock[i] is EcoStockItem && stock[i] != null)
                 {
-                    Console.WriteLine(stock[i] + " + ECO produkt! <3");
+                    Console.WriteLine(stock[i] + ", ECO produkt! <3");
                 }
                 else if (stock[i] != null)
                 {
